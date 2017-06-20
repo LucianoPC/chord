@@ -24,31 +24,31 @@ int main (int argc, char* argv[])
     MuMaterial material;
     material.LoadScore(argv[1]);
 
-    CounterPoint counter_point(material);
-    counter_point.SetScalePitch(60);
-    counter_point.PrintHarmonicPitchs();
+    // CounterPoint counter_point(material);
+    // counter_point.SetScalePitch(60);
+    // counter_point.PrintHarmonicPitchs();
 
 
-    MuMaterial counter_point_material = counter_point.GenerateCounterPointMaterial();
+    // MuMaterial counter_point_material = counter_point.GenerateCounterPointMaterial();
 
-    material.AddVoices(1);
-    material.SetVoice(1, counter_point_material, 0);
+    // material.AddVoices(1);
+    // material.SetVoice(1, counter_point_material, 0);
 
-    material.SetInstrument(0, 2);
-    material.SetInstrument(1, 3);
+    // material.SetInstrument(0, 2);
+    // material.SetInstrument(1, 3);
 
-    material.Show();
+    // material.Show();
 
-    material.SetDefaultFunctionTables();
-    material.Score(output_path + "score");
-    material.Orchestra(output_path + "orchestra");
+    // material.SetDefaultFunctionTables();
+    // material.Score(output_path + "score");
+    // material.Orchestra(output_path + "orchestra");
 
 
-    Voice voice = counter_point.cantus_firmus_voice;
-    cout << "Cantus Firmus Voice: " << voice.name << endl;
+    // Voice voice = counter_point.cantus_firmus_voice;
+    // cout << "Cantus Firmus Voice: " << voice.name << endl;
 
-    voice = counter_point.counter_point_voice;
-    cout << "Counter Point Voice: " << voice.name << endl;
+    // voice = counter_point.counter_point_voice;
+    // cout << "Counter Point Voice: " << voice.name << endl;
 
     // counter_point_material.SetDefaultFunctionTables();
     // counter_point_material.Score(output_path + "score_cp");
