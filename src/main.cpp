@@ -7,6 +7,7 @@
 #include <vector>
 #include "MuMaterial.h"
 #include "counter_point.hpp"
+#include "chord.hpp"
 #include "voice.hpp"
 
 using namespace std;
@@ -23,6 +24,18 @@ int main (int argc, char* argv[])
     MuInit();
     MuMaterial material;
     material.LoadScore(argv[1]);
+
+    Chord chord(material);
+
+    MuMaterial chord_material = chord.GenerateChordMaterial();
+
+    chord_material.SetDefaultFunctionTables();
+    chord_material.Score(output_path + "score");
+    chord_material.Orchestra(output_path + "orchestra");
+
+    // material.SetDefaultFunctionTables();
+    // material.Score(output_path + "score");
+    // material.Orchestra(output_path + "orchestra");
 
     // CounterPoint counter_point(material);
     // counter_point.SetScalePitch(60);
